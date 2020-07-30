@@ -6,14 +6,8 @@ class Anagram
     @word = word
   end
   
-  def match(possible_anagrams)
-    anagrams_list = []
-    possible_anagrams.each do |word|
-     if  @word.split("").sort == word.split("").sort
-        anagrams_list << word
-      end
-    end
-    anagrams_list
+  def match(anagrams_array)
+    anagrams_array.select {|word| word.split("").sort == @word.split("").sort}
   end
   
 end
